@@ -8,10 +8,11 @@ export const createRecipe = async (req, res) => {
         res.status(200).json({message : "Recipe Added Successfully", data: newRecipe});
     } catch (error) {
         console.log(error);
+        res.status(500).json({message: "Error creating recipes", error: error.message});
     }
 }
 
-//
+
 export const getAllRecipes = async (req, res) => {
     try {
         const recipes = await Recipes.find(); 
