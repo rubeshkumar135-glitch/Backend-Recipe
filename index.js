@@ -9,6 +9,10 @@ app.use(express.json());
 
 const PORT = process.env.PORT;
 
+app.get('/', (req, res) => {
+    res.send('Backend is running ');
+});
+
 app.use('/api', router);
 
 connectDB();
